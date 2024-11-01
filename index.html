@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>$CHOP</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<style>
+		@keyframes rotate {
+			0% {
+				transform: translate(0, 47.5%) rotate(0);
+			}
+
+			100% {
+				transform: translate(0, 47.5%) rotate(360deg);
+			}
+		}
+
+		@keyframes rotate-2 {
+			0% {
+				transform: translate(0, 47.5%) rotate(-10deg);
+			}
+
+			100% {
+				transform: translate(0, 47.5%) rotate(10deg);
+			}
+		}
+
+		@keyframes scale {
+			0% {
+				transform: translate(0, 47.5%) rotate(0) scaleY(1);
+			}
+
+			30% {
+				transform: translate(0, 47.5%) rotate(0) scaleY(3);
+			}
+
+			100% {
+				transform: translate(0, 47.5%) rotate(0) scaleY(0.5);
+			}
+		}
+
+		@keyframes scale-2 {
+			0% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+
+			75% {
+				transform: translate(-50%, -50%) scale(2);
+			}
+
+			100% {
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+
+		@keyframes down {
+			0% {
+				top: 0;
+			}
+
+			99% {
+				top: 100%;
+			}
+
+			100% {
+				top: 100%;
+				display: none;
+			}
+		}
+
+		.loader-box {
+			position: fixed;
+			z-index: 100;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgb(36, 222, 245);
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.loader-box::before {
+			content: '';
+			position: absolute;
+			z-index: 1;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 20px;
+			height: 20px;
+			background-color: #000;
+			border-radius: 50%;
+			transform-origin: center;
+			animation: scale-2 1s ease infinite;
+		}
+
+		.loaded .loader-box::before {
+			animation: none;
+		}
+
+		.loader {
+			position: relative;
+			z-index: 2;
+			transform: translate(0, 47.5%) rotate(0);
+			transform-origin: center 6px;
+		}
+
+		.loader img {
+			width: 200px;
+		}
+
+		.loaded .loader {
+			animation:
+				rotate 1s ease-in 0.3s,
+				scale 1s ease 1.3s forwards;
+		}
+
+		.loaded .loader-box {
+			animation: down 0.6s ease 1.6s forwards;
+		}
+	</style>
+	<link rel="stylesheet" href="css/style.minbd7dbd7d.css">
+	<link rel="shortcut icon" href="images/chopimage.png">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<!-- <div class="loader-box">
+		<span class="loader"><img src="img/loader.png" alt="Image" /></span>
+	</div> -->
+	<div class="wrapper">
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo"><img src="images/rmchop.png" width="40px" alt="Logo Image"></a>
+				<div class="header__menu menu">
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" data-goto-header data-goto=".hero" class="menu__link">Home</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" data-goto-header data-goto=".about" class="menu__link">About</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" data-goto-header data-goto=".tokenomics" class="menu__link">Tokenomics</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" data-goto-header data-goto=".buy" class="menu__link">How to Buy </a>
+							</li>
+						</ul>
+					</nav>
+					<button type="button" class="menu__icon icon-menu"><span></span></button>
+				</div>
+				<div data-da=".menu__body, 991.98" class="header__actions">
+					<a target="_blank" href="https://t.me/Chop_oneth" class="header__action button"><img src="fonts/telegram.svg" alt="Telegram Icon"><span></span></a>
+					<a target="_blank" href="https://x.com/ChopOnEth" class="follow__body-button button button-black"><img src="fonts/x.svg" alt="Twitter Icon"><span></span></a>
+
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<section data-watch="navigator" data-watch-threshold="0.51" class="page__hero hero">
+				<div class="hero__background">
+					<span></span><span></span>
+					<img src="images/rmmm.png" alt="Background Image">
+				</div>
+				<div class="hero__container">
+					<div class="hero__content">
+						<h1 class="hero__title">
+							<!-- <img src="./img/new.png" width="50%" alt="" /> -->
+							<!-- <span>Trump Card</span> -->
+						</h1>
+						<div class="hero__actions">
+							<a target="_blank" href="https://app.uniswap.org/explore/tokens/ethereum/0xa77e9db40d1503909c55821a32a21f4948764215" class="hero__button hero__button--white ">Buy Now</a>
+							<div class="tokenomics__number">
+								<div class="tokenomics__number-body">
+									<div class="tokenomics__number-text">
+										0xa77...64215
+									</div>
+									<button type="button" class="tokenomics__number-button copy-ca-btn" style="padding: 5px;">
+										<img src="fonts/copy.svg" alt="Icon">
+									</button>
+								</div>
+								<!-- <div class="tokenomics__number-bottom-text" style="color: aliceblue;">
+									Contract Address
+								</div> -->
+							</div>
+
+							<!-- <a target="_blank" href="#" class="hero__button hero__button--white ">
+								<img src="img/ray.svg" alt="logo" width="50px" />
+							</a> -->
+						</div>
+					</div>
+					<div class="hero__image">
+						<img src="images/btw.png" alt="Image">
+					</div>
+				</div>
+			</section>
+
+			<section data-watch="navigator" data-watch-threshold="0.51" class="page__about about">
+				<div class="about__container">
+					<div class="about__body">
+						<div data-watch-threshold="0.6" data-watch-once data-watch class="about__content">
+							<h2 class="about__title">About</h2>
+							<div class="about__text">
+								Chop is the ultimate memecoin inspired by everyone’s favorite dog from GTA V! Just like
+								Chop the dog
+								always had Franklin’s back, this token is here to bring excitement, loyalty, and laughs
+								to its community.
+								Chop isn’t just a coin—it’s a movement celebrating community spirit and those
+								unforgettable GTA
+								moments. Join the pack, be part of the fun, and get ready to “paws” for a wild ride with
+								Chop!
+							</div>
+							<!-- <div>
+								<a target="_blank" href="#" class="follow__body-button button button-black"
+									style="margin-top: 20px;"><span>Buy Now</span></a>
+								<h3 style="margin-top: 10px;">CA: **********</h3>
+							</div> -->
+						</div>
+						<div class="about__image">
+							<img src="images/rmchop.png" alt="Image">
+						</div>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- <section data-watch="navigator" data-watch-threshold="1" class="page__follow follow">
+				<div class="follow__container">
+					<div data-watch-threshold="0.5" data-watch-once data-watch class="follow__body">
+						<div class="follow__body-info">
+							<h2 class="follow__body-title" >
+							THE $CHOP
+							</h2>
+						 <p style="font-family: Libre Bodoni; word-spacing: 7px; line-height: 1.5; color: #f1d76a;">In the world of memecoins, where jokes often lead to serious returns, there has never been a coin that truly captures the essence of winning big and being YUGE. Until now. Enter CHOP($CHOP), the memecoin designed to be the ultimate trump in the chaotic world of crypto. $CHOP is your chance to playing the greatest hand in the history of memecoins. As the 45th president himself once said: "Nobody wins more than us. Believe me."</p>
+						</div>
+						<div class="follow__body-image" style="width: 300px;      margin:  40px; ">
+							<img src="./img/tup.jpg" alt="Image"     />
+						</div>
+					</div>
+				</div>
+			</section> -->
+
+			<section data-watch="navigator" data-watch-threshold="0.85" class="page__tokenomics tokenomics">
+				<div class="tokenomics__container">
+					<div data-watch-threshold="0.6" data-watch-once data-watch class="tokenomics__header">
+						<h2 class="tokenomics__title" style="color: #fff;">
+							$CHOP <br>
+							Tokeno- <br>
+							mics
+						</h2>
+						<div class="tokenomics__number">
+							<div class="tokenomics__number-body">
+								<div class="tokenomics__number-text">
+									0xa77...64215
+								</div>
+								<button type="button" class="tokenomics__number-button copy-ca-btn">
+									<img src="fonts/copy.svg" alt="Icon">
+								</button>
+							</div>
+							<div class="tokenomics__number-bottom-text" style="color: aliceblue;">
+								Contract Address
+							</div>
+						</div>
+					</div>
+					<div data-watch-threshold="0.6" data-watch-once data-watch class="tokenomics__items">
+						<div class="tokenomics__item item-tokenomics">
+							<div class="item-tokenomics__title" style="color: aliceblue;">$CHOP</div>
+							<div class="item-tokenomics__text" style="color: aliceblue;">Symbol</div>
+						</div>
+						<div class="tokenomics__item item-tokenomics">
+							<div class="item-tokenomics__title" style="color: aliceblue;">0/0</div>
+							<div class="item-tokenomics__text" style="color: aliceblue;">Tax</div>
+						</div>
+						<div class="tokenomics__item item-tokenomics">
+							<div class="item-tokenomics__title" style="color: aliceblue;">Burned Forever</div>
+							<div class="item-tokenomics__text" style="color: aliceblue;">Liquidity Pool</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section data-watch="navigator" data-watch-threshold="1" class="page__follow buy">
+				<div class="follow__container">
+					<div data-watch-threshold="0.5" data-watch-once data-watch class="follow__body">
+						<div class="follow__body-info">
+							<h2 class="follow__body-title" style="color: aliceblue;">
+								How To Buy
+							</h2>
+							<p style="color: aliceblue;"><span style="color: #fed985;">Step 1: create Wallet </span><br> Download metamask or your
+								wallet of choice from the
+								app store or google play store for
+								free. Desktop users, download the google chrome extension by going to metamask.io.</p>
+							<br>
+							<p style="color: aliceblue;"><span style="color: #fed985;">Step 2: Get Some ETH</span><br>
+								Have ETH in your Wallet to switch to $CHOP. If you don’t have any ETH, you can buy
+								directly
+								on metamask, transfer from another wallet, or buy on another exchange and send it to
+								your wallet.</p>
+
+							<br>
+							<p style="color: aliceblue;"><span style="color: #fed985;">Step 3: Go to Uniswap </span><br>
+								Connect to Uniswap. Go to app.uniswap.org in google chrome or on the browser inside your
+								Metamask app. Connect your wallet. Paste the $CHOP token address into Uniswap, select
+								CHOP, and
+								confirm.</p>
+							<br>
+							<p style="color: aliceblue;">
+								<span style="color: #fed985;">Step 4: Switch ETH for $CHOP</span><br>
+								Switch ETH for $CHOP. We have ZERO taxes, so you don’t need to worry about buying with a
+								specific slippage, although you may need to use slippage during times of market
+								volatility
+							</p>
+							<br>
+						</div>
+
+					</div>
+				</div>
+			</section>
+		 
+			<section data-watch="navigator" data-watch-threshold="1" class="page__follow follow">
+				<div class="follow__container">
+					<div data-watch-threshold="0.5" data-watch-once data-watch class="follow__body">
+						<div class="follow__body-info">
+							<h2 class="follow__body-title" style="color: aqua;">
+								JOIN OUR COMMUNITY TODAY! </h2>
+							<div class="follow__body-actions">
+								<a target="_blank" href="https://x.com/ChopOnEth" class="follow__body-button button button-black"><img src="fonts/x.svg" alt="Twitter Icon"><span>Follow Twitter/X</span></a>
+
+								<a target="_blank" href="https://t.me/Chop_oneth" class="follow__body-button button button-black"><img src="fonts/telegram.svg" alt="Telegram Icon"><span>Join
+										Telegram</span></a>
+
+								<a target="_blank" href="https://www.dextools.io/app/en/ether/pair-explorer/0xc2052cc59bb0e868d6176712748b28c847eba5d4?t=1730408901174" class="follow__body-button button button-black" style="margin: 5px;"><img src="images/dext.webp" alt="dex" width="100px"><span></span></a>
+										
+								<a target="_blank" href="#" class="follow__body-button button button-black" style="margin: 5px;"><img src="images/coinmarket.png" alt="dex" width="100px"><span></span></a>
+									<a target="_blank" href="#" class="follow__body-button button button-black" style="margin: 5px;"><img src="images/CoinGecko-logo-tumb.png" alt="dex" width="100px"><span></span></a>
+										<a target="_blank" href="https://dexscreener.com/ethereum/0xc2052cc59bb0e868d6176712748b28c847eba5d4" class="follow__body-button button button-black" style="margin: 5px;"><img src="images/dexscan.png" alt="dex" width="100px"><span></span></a>
+							</div>
+						</div>
+						<div class="follow__body-image">
+							<img src="images/rmchop.png" alt="Image">
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__body"> 
+					<div>
+						<h3 style="color: #ffffff; padding: 10px;">Disclaimer</h3>
+						<p style="color: #ffffff; font-family: sans-serif; padding: 10px;">$CHOP is a meme coin created purely for entertainment purposes, with no affiliation to Rockstar Games. This token has no intrinsic value and does not offer any financial returns. $CHOP is simply paying homage to a dog we all love and recognize.</p>
+
+					</div>
+					
+					<p style="text-align: center; padding: 20px;">ALL RIGHTS RESERVED &#169; 2024</p>
+					<div class="footer__top">
+
+						<a href="#" class="footer__logo"><img src="images/rmchop.png" alt="Logo Image" width="50px"></a>
+						<div class="footer__social">
+							<a target="_blank" href="https://t.me/Chop_oneth" class="footer__social-item">
+								<img src="fonts/telegram.svg" alt="Icon">
+							</a>
+							<a target="_blank" href="https://x.com/ChopOnEth" class="footer__social-item">
+								<img src="fonts/x.svg" alt="Icon">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<script src="js/app.minbd7dbd7d.js"></script>
+</body>
+
+
+
+</html>
